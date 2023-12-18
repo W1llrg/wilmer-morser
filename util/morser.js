@@ -19,4 +19,21 @@ function unmorse(text) {
     return morse;
 }
 
-module.exports = { unmorse };
+function morse(text) {
+    console.log(`input: ${text}`);
+    let morse = '';
+    let words = text.split(' ');
+
+    for (let word of words) {
+        for (let letter of word) {
+            letter = letter.toUpperCase();
+            morse += morse_alphabet[letter] + ' ';
+        }
+        morse += '/ ';
+    }
+    console.log(`output: ${morse}`)
+
+    return morse;
+}
+
+module.exports = { unmorse, morse };
