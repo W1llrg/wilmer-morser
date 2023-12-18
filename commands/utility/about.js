@@ -5,7 +5,7 @@ module.exports = {
         .setName('about')
         .setDescription('Replies with cool infos'),
     async execute(interaction) {
-        msg = '```md .... .. / .. - ... / .-- .. .-.. -- . .-. / -- --- .-. ... . .-.```';
+        msg = '```.... .. / .. - ... / .-- .. .-.. -- . .-. / -- --- .-. ... . .-.```';
         await interaction.reply(msg);
     },
 };
