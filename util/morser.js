@@ -3,7 +3,7 @@ const morse_alphabet = require('./morse_alphabet.js');
 /**
  * logic: '/' is space, ' ' is to separate letters
  */
-export function unmorse(text) {
+function unmorse(text) {
     let morse = '';
     let words = text.split('/');
 
@@ -18,3 +18,5 @@ export function unmorse(text) {
 
     return morse;
 }
+
+module.exports = { unmorse };
