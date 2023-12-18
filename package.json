@@ -1,0 +1,11 @@
+{
+  "name": "wilmer-morser",
+  "version": "1.0.0",
+  "description": "discord bot to convert morse to text",
+  "main": "index.js",
+  "author": "Willrg <will.ragueneau@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  }
+}
