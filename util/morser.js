@@ -5,7 +5,7 @@ const morse_alphabet = require('./morse_alphabet.js');
  */
 function unmorse(morse) {
     let text = '';
-    let words = morse.split(' / ');
+    let words = morse.split('/');
 
     for (let word of words) {
         let chars = word.split(' ');
