@@ -13,12 +13,22 @@ module.exports = {
                 .setRequired(true)),
     async execute(interaction) {
         const text = interaction.options.getString('text') ?? 'you need to input text for me to morse it my friend';
-        const msg = morse(text);
-        const embed = new EmbedBuilder()
-            .setTitle('Your morse text friendo')
-            .setDescription(`Input message: ${text}\nMorsed output: ${msg}`)
-            .setColor('#00ff00');
+        const morsed = morse(text);
 
-        await interaction.reply({ embeds: [embed] });
+        if (morsed[1] === true) {
+            const embed = new EmbedBuilder()
+                .setTitle('Your morse text friendo')
+                .setDescription(`Input message: ${text}\nMorsed output: ${morsed[0]}\n\nThere were unknown characters in your input that I, the great Wilmer Morser, could not morse.`)
+                .setColor('#00ff00');
+
+            await interaction.reply({ embeds: [embed] });
+        } else {
+            const embed = new EmbedBuilder()
+                .setTitle('Your morse text friendo')
+                .setDescription(`Input message: ${text}\nMorsed output: ${morsed[0]}`)
+                .setColor('#00ff00');
+
+            await interaction.reply({ embeds: [embed] });
+        }
     },
 };

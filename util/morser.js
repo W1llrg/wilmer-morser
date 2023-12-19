@@ -10,10 +10,13 @@ function unmorse(morse) {
     for (let word of words) {
         let chars = word.split(' ');
         for (let char of chars) {
-            text += Object.keys(morse_alphabet).find(key => morse_alphabet[key] === char);
+            let letter = Object.keys(morse_alphabet).find(key => morse_alphabet[key] === char);
+            if (letter === undefined) return -1;
+            text += letter;
         }
         text += ' ';
     }
+    console.log(`output: ${text}`)
 
     return text;
 }
@@ -22,17 +25,24 @@ function morse(text) {
     console.log(`input: ${text}`);
     let morse = '';
     let words = text.split(' ');
+    let hasUnknown = false;
 
     for (let word of words) {
         for (let letter of word) {
             letter = letter.toUpperCase();
-            morse += morse_alphabet[letter] + ' ';
+            let char = morse_alphabet[letter]; 
+            if (char !== undefined) {
+                morse += char + ' ';
+            } else {
+                morse += '¿';
+                hasUnknown = true;
+            }
         }
         morse += '/ ';
     }
     console.log(`output: ${morse}`)
 
-    return morse;
+    return [morse, hasUnknown];
 }
 
 function morseToString() {
