@@ -16,7 +16,7 @@ module.exports = {
         const msg = morse(text);
         const embed = new EmbedBuilder()
             .setTitle('Your morse text friendo')
-            .setDescription(msg)
+            .setDescription(`Input message: ${text}\nMorsed output: ${msg}`)
             .setColor('#00ff00');
 
         await interaction.reply({ embeds: [embed] });

@@ -15,7 +15,7 @@ module.exports = {
         const msg = unmorse(text);
         const embed = new EmbedBuilder()
             .setTitle('Your unmorsed text friendo')
-            .setDescription(msg)
+            .setDescription(`Input message: ${text}\nUnmorsed output: ${msg}`)
             .setColor('#ff0000');
 
         await interaction.reply({ embeds: [embed] });
