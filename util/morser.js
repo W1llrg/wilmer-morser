@@ -35,4 +35,12 @@ function morse(text) {
     return morse;
 }
 
-module.exports = { unmorse, morse };
+function morseToString() {
+    let str = '';
+    for (let key in morse_alphabet) {
+        str += `${key}: ${morse_alphabet[key]}\n`;
+    }
+    return str;
+}
+
+module.exports = { unmorse, morse, morseToString };
