@@ -18,14 +18,14 @@ module.exports = {
         if (morsed[1] === true) {
             const embed = new EmbedBuilder()
                 .setTitle('Your morse text friendo')
-                .setDescription(`Input message: ${text}\nMorsed output: ${morsed[0]}\n\nThere were unknown characters in your input that I, the great Wilmer Morser, could not morse.`)
+                .setDescription(`Input message: \`${text}\`\nMorsed output: \`${morsed[0]}\`\n\nThere were unknown characters in your input that I, the great Wilmer Morser, could not morse.`)
                 .setColor('#00ff00');
 
             await interaction.reply({ embeds: [embed] });
         } else {
             const embed = new EmbedBuilder()
                 .setTitle('Your morse text friendo')
-                .setDescription(`Input message: ${text}\nMorsed output: ${morsed[0]}`)
+                .setDescription(`Input message: \`${text}\`\nMorsed output: \`${morsed[0]}\``)
                 .setColor('#00ff00');
 
             await interaction.reply({ embeds: [embed] });

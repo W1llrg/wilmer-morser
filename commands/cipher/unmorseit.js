@@ -24,7 +24,7 @@ module.exports = {
         } else {
             const embed = new EmbedBuilder()
                 .setTitle('Your unmorsed text friendo')
-                .setDescription(`Input message: ${text}\nUnmorsed output: ${msg}`)
+                .setDescription(`Input message: \`${text}\`\nUnmorsed output: \`${msg}\``)
                 .setColor('#ff0000');
     
             await interaction.reply({ embeds: [embed] });
