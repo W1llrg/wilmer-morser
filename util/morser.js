@@ -8,7 +8,7 @@ class Morser {
     unmorse(morse, normalize=true) {
         
         if (normalize) morse = this.normalizeMorse(morse);
-        
+
         let text = '';
         let words = morse.split('/');
 
@@ -43,7 +43,7 @@ class Morser {
                     hasUnknown = true;
                 }
             }
-            morseCode += '/ ';
+            if (words.length > 1) morseCode += '/ ';
         }
         console.log(`output: ${morseCode}`)
 
