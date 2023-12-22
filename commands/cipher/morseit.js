@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder } = require('discord.js');
-const { morse } = require('../../util/morser.js');
+const Morser = require('../../util/morser.js');
 
 module.exports = {
     cooldown: 5,
@@ -13,7 +13,7 @@ module.exports = {
                 .setRequired(true)),
     async execute(interaction) {
         const text = interaction.options.getString('text') ?? 'you need to input text for me to morse it my friend';
-        const morsed = morse(text);
+        const morsed = Morser.morse(text);
 
         if (morsed[1] === true) {
             const embed = new EmbedBuilder()

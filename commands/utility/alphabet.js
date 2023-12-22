@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder } = require('discord.js');
-const { morseToString } = require('../../util/morser.js');
+const Morser = require('../../util/morser.js');
 
 module.exports = {
     cooldown: 5,
@@ -10,7 +10,7 @@ module.exports = {
     async execute(interaction) {
         const embed = new EmbedBuilder()
             .setTitle('The alphabet')
-            .setDescription(morseToString())
+            .setDescription(Morser.morseToString())
             .setColor('#0000ff');
 
         await interaction.reply({ embeds: [embed] });
