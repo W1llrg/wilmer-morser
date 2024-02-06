@@ -10,7 +10,7 @@ class Morser {
         if (normalize) morse = this.normalizeMorse(morse);
 
         let text = '';
-        let words = morse.split('/');
+        let words = morse.split(' / ');
 
         for (let word of words) {
             let chars = word.split(' ');
